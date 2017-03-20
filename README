@@ -2,3 +2,5 @@ CMPS 142 - Machine Learning
 
 Cristian Gonzalez - cfgonzal@ucsc.edu
 Mithilesh Athreya - mathreya@ucsc.edu
+
+We will be working a binary classification problem using the KNN, SVM and Logistic Regression to determine if a movie made within the last decade is profitable or not, ignoring any discrepancies due to inflation.
