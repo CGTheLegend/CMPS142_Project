@@ -8,4 +8,6 @@ def readcsv(filename):
     ds = pd.read_csv(filename, sep=',', header=None)
     # convert to tensor
     dataset = tf.contrib.learn.extract_pandas_matrix(ds)
-    return dataset
+    features = tf.convert_to_tensor(dataset[0,:], dtype=tf.string)
+    gross = tf.convert_to_tensor(dataset[1:,8], dtype=tf.float32)
+    return dataset, features, gross
