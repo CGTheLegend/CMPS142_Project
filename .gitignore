@@ -5,4 +5,5 @@
 
 # other
 .Python
+*.pyc
 pip-selfcheck.json
