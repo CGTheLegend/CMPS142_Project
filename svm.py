@@ -10,26 +10,6 @@ from sklearn.cross_validation import train_test_split
 os.environ['TF_CPP_MIN_LOG_LEVEL']='2'
 np.set_printoptions(threshold='nan')
 
-class MultiColumnLabelEncoder:
-    def __init__(self,columns = None):
-        self.columns = columns
-
-    def fit(self,X,y=None):
-        return self
-
-    def transform(self,X):
-        output = X.copy()
-        if self.columns is not None:
-            for col in self.columns:
-                output[col] = LabelEncoder().fit_transform(output[col])
-        else:
-            for colname,col in output.iteritems():
-                output[colname] = LabelEncoder().fit_transform(col)
-        return output
-
-    def fit_transform(self,X,y=None):
-        return self.fit(X,y).transform(X)
-
 COLUMNS = ["color", "director_name", "num_critic_for_reviews", "duration", "director_facebook_likes", "actor_3_facebook_likes",
     "actor_2_name", "actor_1_facebook_likes", "gross", "genres", "actor_1_name", "movie_title", "num_voted_users",
     "cast_total_facebook_likes", "actor_3_name", "facenumber_in_poster", "plot_keywords", "movie_imdb_link", "num_user_for_reviews",
