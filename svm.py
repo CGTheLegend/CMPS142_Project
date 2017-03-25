@@ -70,7 +70,7 @@ SVC(C=1.0, cache_size=200, class_weight=None, coef0=0.0,
     tol=0.001, verbose=False)
 
 # generate test dataset
-X_train, X_test, y_train, y_test = train_test_split(dataset, targets, test_size=0.3, random_state=0.5)
+X_train, X_test, y_train, y_test = train_test_split(dataset, targets, test_size=0.5, random_state=0)
 
 predictions = clf.predict(X_test)
 error = np.equal(y_test, predictions)
